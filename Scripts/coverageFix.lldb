@@ -1,0 +1,7 @@
+process launch -s -- -project ./Slate.xcodeproj -scheme Slate  -sdk iphonesimulator -destination 'name=iPhone SE' test
+break set -b ___lldb_unnamed_symbol1$$xcodebuild
+continue
+process load ./Scripts/libFixUICodeCoverage.dylib
+#expr (void *)dlopen("Projects/Slate/Scripts/libFixUICodeCoverage.dylib", 0x2);
+continue
+quit

@@ -15,7 +15,8 @@ install:
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Slate'
 script:
-- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -project ./Slate.xcodeproj -scheme Slate  -sdk iphonesimulator -destination 'name=iPhone SE' build test | xcpretty
+#- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -project ./Slate.xcodeproj -scheme Slate  -sdk iphonesimulator -destination 'name=iPhone SE' build test | xcpretty
+- ./Scripts/testWithUICoverageFix.sh
 notifications:
   webhooks:
     urls:
