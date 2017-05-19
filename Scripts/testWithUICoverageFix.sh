@@ -17,4 +17,4 @@ echo "Running xcodebuild with lldb to inject fix library"
 xcrun lldb -f /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -s "${SCRIPTS_DIR}/coverageFix.lldb"
 
 # test coverage with:
-xcrun llvm-cov report -instr-profile=$SCRIPTS_DIR/DerivedData/Slate/Build/Intermediates/CodeCoverage/Coverage.profdata $SCRIPTS_DIR/../DerivedData/Slate/Build/Intermediates/CodeCoverage/Products/Debug-iphonesimulator/Slate.app/Slate | grep BaseCaptureViewController.swift
+xcrun llvm-cov report -instr-profile=./DerivedData/Slate/Build/Intermediates/CodeCoverage/Coverage.profdata ./DerivedData/Slate/Build/Intermediates/CodeCoverage/Products/Debug-iphonesimulator/Slate.app/Slate
