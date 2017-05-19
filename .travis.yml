@@ -8,6 +8,7 @@ cache:
     - $HOME/Library/Caches/carthage_cache
 before_install:
 - xcrun swift -version
+- pip install six
 #- brew update
 install:
 - bundle install --without development
